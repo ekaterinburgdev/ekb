@@ -1,1 +1,3 @@
-# ural-ui
+# Ekaterinburg UI
+
+React components library
