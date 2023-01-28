@@ -1,0 +1,110 @@
+.toggle {
+  display: inline-flex;
+  padding: 8px;
+  transition: 0.2s all ease;
+  border-radius: 64px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  background-color: var(--projects-panel-bg-color);
+  color: var(--projects-panel-text-color);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle__control {
+  -webkit-appearance: none;
+  outline: none;
+  appearance: none;
+  transition: 0.2s all ease;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  font-size: 0;
+  position: relative;
+  background-image: url(../assets/logo_ekb.svg);
+  transition: 0.3s all ease;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 35% 35%;
+  overflow: hidden;
+}
+
+.toggle__control:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/confetti.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  transition: 0.3s all ease;
+}
+
+.toggle__control:focus-visible,
+.toggle__control_active,
+.toggle__control:hover {
+  background-size: 40% 40%;
+}
+
+.toggle__control:not(.toggle__control_active):hover:after {
+  transform: rotate(45deg);
+}
+
+.toggle__control:focus-visible,
+.toggle__control_active,
+.toggle__control:active {
+  transform: scale(1.27);
+}
+
+.toggle__control_active:after,
+.toggle__control:active:after {
+  transform: rotate(270deg);
+  transition: 0.5s all ease;
+}
+
+.toggle__activeproject {
+  margin-left: 12px;
+}
+
+/* activeproject */
+.activeproject {
+  display: flex;
+  align-items: center;
+  outline: none;
+  border-radius: 100px;
+  padding-right: 24px;
+  background-color: var(--projects-panel-bg-color);
+  color: var(--projects-panel-text-color);
+  transition: 0.2s all ease;
+}
+
+.activeproject:hover {
+  background-color: var(--projects-panel-text-color);
+  color: var(--projects-panel-bg-color);
+}
+
+.activeproject:not(:hover):focus-visible {
+  background-color: rgba(var(--projects-panel-hover), 0.2);
+}
+
+.activeproject__logo {
+  width: 60px;
+  height: 60px;
+}
+
+.activeproject__title {
+  font-size: 20px;
+  line-height: 20px;
+  padding: 10px 8px;
+  white-space: pre-line;
+}

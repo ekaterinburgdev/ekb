@@ -1,0 +1,117 @@
+.modal {
+  transition: 0.2s all ease;
+  font-family: 'Iset Sans', sans-serif;
+  position: fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modal a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.modal__overlay {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s all ease;
+}
+
+.modal__content {
+  position: absolute;
+  bottom: 0;
+  padding: 16px 0 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s all ease;
+  transform: scale(0);
+  transform-origin: 20px calc(100% - 10px);
+  border-radius: 38px;
+  background-color: var(--projects-panel-bg-color);
+  color: var(--projects-panel-text-color);
+}
+
+.modal__scroller {
+  overflow: auto;
+  max-height: 70vh;
+}
+
+.modal__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.modal__divider {
+  height: 1px;
+  background-color: rgba(155, 170, 190, 0.3);
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.modal__subcontent {
+  margin-right: 16px;
+  text-align: right;
+  height: var(--projects-panel-footer-height);
+  line-height: var(--projects-panel-footer-height);
+}
+
+.modal__subcontent a {
+  margin: 0 16px;
+  font-size: 32px;
+  text-decoration: none;
+  position: relative;
+  outline: none;
+  color: var(--projects-panel-text-color);
+}
+.modal__subcontent a:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(50% + 12px);
+  right: 0;
+  background-color: currentColor;
+  height: 2px;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.modal__subcontent a:not(:hover):before {
+  opacity: 0.3;
+}
+
+.modal__subcontent a:not(:hover):focus-visible:before {
+  opacity: 1;
+}
+
+/* active */
+.modal_active .modal__overlay,
+.modal_active .modal__content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal_active .modal__content {
+  transform: scale(1);
+}
+
+.modal__toggle {
+  position: relative;
+  z-index: 1;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+  .modal__subcontent {
+    padding-bottom: 72px;
+    text-align: center;
+  }
+  .modal__subcontent a {
+    font-size: 24px;
+  }
+}
