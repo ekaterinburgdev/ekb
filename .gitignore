@@ -68,3 +68,4 @@ npm-debug.log*
 .vscode/
 
 storybook-static/
+.vercel

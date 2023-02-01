@@ -1,30 +1,31 @@
-import styles from "./Toggle.module.css";
-import classNames from "classnames";
+import styles from './Toggle.module.css';
+import classNames from 'classnames';
 import {
   ALL_PROJECTS,
   CSS_PANEL_BG_KEY,
   CSS_PANEL_COLOR_KEY,
   CSS_PANEL_FOOTER_HEIGHT,
   CSS_PANEL_HOVER,
-  PROJECT_MAP
-} from "../constants";
-import { Styles, Project, Theme, ToggleStyles } from "../types";
-import { Projects } from "./Projects";
-import { Modal, useModal } from "./Modal";
+  PROJECT_MAP,
+} from '../constants';
+import { Styles, Project, Theme, ToggleStyles } from '../types';
+import { Projects } from './Projects';
+import { Modal, useModal } from './Modal';
+import { AnimatedLogo } from '../../AnimatedLogo';
 
 const defaultTheme = {
-  background: "black",
-  color: "white",
+  background: 'black',
+  color: 'white',
 };
 
 const defaultStyle = {
-  bottom: "16px",
-  left: "16px",
-  zIndex: 1000
+  bottom: '16px',
+  left: '16px',
+  zIndex: 1000,
 };
 
 export interface Props {
-  activeProjectId?: Project["id"];
+  activeProjectId?: Project['id'];
   projects?: Project[];
   theme?: Theme;
   isDarkIcons?: boolean;
@@ -50,8 +51,8 @@ export function ProjectsPanel({
     [CSS_PANEL_BG_KEY]: theme.background,
     [CSS_PANEL_COLOR_KEY]: theme.color,
     [CSS_PANEL_HOVER]: '155, 170, 190',
-    [CSS_PANEL_FOOTER_HEIGHT]: '80px'
-  } as React.CSSProperties
+    [CSS_PANEL_FOOTER_HEIGHT]: '80px',
+  } as React.CSSProperties;
 
   if (!activeProject) {
     return null;
@@ -62,7 +63,7 @@ export function ProjectsPanel({
       isOpen={isOpen}
       onClose={close}
       toggle={toggle}
-      style={{ ...cssVars, ...defaultStyle, ...style}}
+      style={{ ...cssVars, ...defaultStyle, ...style }}
       handler={
         <div className={styles.toggle}>
           <button
@@ -72,7 +73,7 @@ export function ProjectsPanel({
             })}
             onClick={toggle}
           >
-            Меню
+            <AnimatedLogo radius="60px" />
           </button>
           <a
             href={activeProject.link}
@@ -83,7 +84,9 @@ export function ProjectsPanel({
             style={toggleStyle}
           >
             <img
-              src={isDarkIcons ? activeProject.logoDark : activeProject.logoLight}
+              src={
+                isDarkIcons ? activeProject.logoDark : activeProject.logoLight
+              }
               className={styles.activeproject__logo}
               alt={activeProject.fullTitle}
             />
