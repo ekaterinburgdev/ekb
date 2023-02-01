@@ -28,48 +28,10 @@
   height: 60px;
   font-size: 0;
   position: relative;
-  background-image: url(../assets/logo_ekb.svg);
   transition: 0.3s all ease;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 35% 35%;
   overflow: hidden;
-}
-
-.toggle__control:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../assets/confetti.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 100% 100%;
-  transition: 0.3s all ease;
-}
-
-.toggle__control:focus-visible,
-.toggle__control_active,
-.toggle__control:hover {
-  background-size: 40% 40%;
-}
-
-.toggle__control:not(.toggle__control_active):hover:after {
-  transform: rotate(45deg);
-}
-
-.toggle__control:focus-visible,
-.toggle__control_active,
-.toggle__control:active {
-  transform: scale(1.27);
-}
-
-.toggle__control_active:after,
-.toggle__control:active:after {
-  transform: rotate(270deg);
-  transition: 0.5s all ease;
 }
 
 .toggle__activeproject {
