@@ -84,9 +84,7 @@ export function ProjectsPanel({
             style={toggleStyle}
           >
             <img
-              src={
-                isDarkIcons ? activeProject.logoDark : activeProject.logoLight
-              }
+              src={activeProject.logo}
               className={styles.activeproject__logo}
               alt={activeProject.fullTitle}
             />

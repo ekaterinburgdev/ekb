@@ -10,7 +10,7 @@ export function Project({ project, isDarkIcons }: Props): JSX.Element {
   return (
     <a href={project.link} className={styles.project} key={project.shortTitle}>
       <img
-        src={isDarkIcons ? project.logoDark : project.logoLight}
+        src={project.logo}
         className={styles.project__logo}
         alt={project.shortTitle}
       />
