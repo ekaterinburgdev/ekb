@@ -8,8 +8,7 @@ export interface Project {
   fullTitle: string;
   shortTitle: string;
   link: string;
-  logoDark: string;
-  logoLight: string;
+  logo: string;
   active?: boolean;
 }
 
