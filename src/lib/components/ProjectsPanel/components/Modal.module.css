@@ -68,25 +68,26 @@
   position: relative;
   outline: none;
   color: var(--projects-panel-text-color);
-}
-.modal__subcontent a:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: calc(50% + 12px);
-  right: 0;
-  background-color: currentColor;
-  height: 2px;
-  z-index: 2;
-  opacity: 0.8;
-}
 
-.modal__subcontent a:not(:hover):before {
-  opacity: 0.3;
-}
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(50% + 12px);
+    right: 0;
+    background-color: currentColor;
+    height: 2px;
+    z-index: 2;
+    opacity: 0.8;
+  }
 
-.modal__subcontent a:not(:hover):focus-visible:before {
-  opacity: 1;
+  &:not(:hover):before {
+    opacity: 0.3;
+  }
+  
+  &:not(:hover):focus-visible:before {
+    opacity: 1;
+  }
 }
 
 /* active */

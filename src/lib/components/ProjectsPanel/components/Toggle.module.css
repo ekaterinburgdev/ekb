@@ -48,15 +48,15 @@
   background-color: var(--projects-panel-bg-color);
   color: var(--projects-panel-text-color);
   transition: 0.2s all ease;
-}
 
-.activeproject:hover {
-  background-color: var(--projects-panel-text-color);
-  color: var(--projects-panel-bg-color);
-}
-
-.activeproject:not(:hover):focus-visible {
-  background-color: rgba(var(--projects-panel-hover), 0.2);
+  &:hover {
+    background-color: var(--projects-panel-text-color);
+    color: var(--projects-panel-bg-color);
+  }
+  
+  &:not(:hover):focus-visible {
+    background-color: rgba(var(--projects-panel-hover), 0.2);
+  }
 }
 
 .activeproject__logo {
