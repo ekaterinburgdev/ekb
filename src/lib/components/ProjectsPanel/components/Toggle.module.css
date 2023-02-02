@@ -6,23 +6,25 @@
   cursor: pointer;
   outline: none;
   user-select: none;
-  background-color: var(--projects-panel-bg-color);
+  background-color: var(--projects-panel-toggle-bg-color);
   color: var(--projects-panel-text-color);
   -webkit-tap-highlight-color: transparent;
+  &.toggle_active,
+  &.toggle_active .activeproject:not(:hover) {
+    background-color: var(--projects-panel-bg-color);
+    color: var(--projects-panel-text-color);
+  }
 }
 
 .toggle__control {
   -webkit-appearance: none;
   outline: none;
   appearance: none;
-  transition: 0.2s all ease;
-  background-color: transparent;
   border: none;
   margin: 0;
   padding: 0;
   cursor: pointer;
-  background-color: black;
-  color: white;
+  background-color: transparent;
   border-radius: 100px;
   width: 60px;
   height: 60px;
@@ -44,23 +46,36 @@
   outline: none;
   border-radius: 100px;
   padding-right: 24px;
-  background-color: var(--projects-panel-bg-color);
+  background-color: var(--projects-panel-toggle-bg-color);
+  text-decoration: none;
   color: var(--projects-panel-text-color);
   transition: 0.2s all ease;
 
   &:hover {
     background-color: var(--projects-panel-text-color);
     color: var(--projects-panel-bg-color);
+
+    .activeproject__logo {
+      background-color: var(--projects-panel-text-color);
+    }
   }
   
   &:not(:hover):focus-visible {
     background-color: rgba(var(--projects-panel-hover), 0.2);
+
+    .activeproject__logo {
+      background-color: transparent;
+    }
   }
+
 }
 
 .activeproject__logo {
   width: 60px;
   height: 60px;
+  background-color: black;
+  border-radius: 100px;
+  transition: 0.2s all ease;
 }
 
 .activeproject__title {
@@ -69,3 +84,37 @@
   padding: 10px 8px;
   white-space: pre-line;
 }
+
+/* allprojects */
+.allprojects {
+  padding: 12px 16px;
+  background-color: var(--projects-panel-bg-color);
+  color: var(--projects-panel-text-color);
+  transition: 0.2s all ease;
+  text-decoration: none;
+  border-radius: 100px;
+  position: relative;
+  font-size: 20px;
+  line-height: 21px;
+  outline: none;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(var(--projects-panel-hover), 0.2);
+  }
+  
+  &:active {
+    background-color: rgba(var(--projects-panel-hover), 0.1);
+  }
+  
+  &:focus-visible {
+    box-shadow: inset 0 0 0 4px var(--projects-focus-color);
+  }
+  
+}
+
+.allprojects__text {
+  margin-left: 12px;
+}
+

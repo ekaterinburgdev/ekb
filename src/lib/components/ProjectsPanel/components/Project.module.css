@@ -8,7 +8,8 @@
   border-radius: 24px;
   transition: 0.2s all ease;
   outline: none;
-  --projects-panel-hover: 155, 170, 190;
+  color: inherit;
+  text-decoration: none;
 
   &:hover {
     background-color: rgba(var(--projects-panel-hover), 0.2);
@@ -21,11 +22,22 @@
   &:focus {
     box-shadow: inset 0 0 0 8px rgba(255, 212, 0, 1);
   }
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 8px var(--projects-focus-color);
+  }
+}
+
+.project_active {
+  box-shadow: inset 0 0 0 8px rgba(var(--projects-panel-hover), 0.2);
+  pointer-events: none;
 }
 
 .project__logo {
   width: 120px;
   height: 120px;
+  background-color: black;
+  border-radius: 100px;
 }
 
 .project__title {

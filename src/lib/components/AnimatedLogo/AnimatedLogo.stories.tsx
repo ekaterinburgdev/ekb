@@ -1,4 +1,4 @@
-import { ComponentStory } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 import { AnimatedLogo } from './AnimatedLogo';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   component: AnimatedLogo,
 };
 
-const Template: ComponentStory<typeof AnimatedLogo> = (args) => (
+const Template: StoryFn<typeof AnimatedLogo> = (args) => (
   <AnimatedLogo {...args} />
 );
 
@@ -26,4 +26,9 @@ Small.args = {
 export const Active = Template.bind({});
 Active.args = {
   active: true,
+};
+
+export const HoverAnimation = Template.bind({});
+HoverAnimation.args = {
+  withLogoHover: true,
 };

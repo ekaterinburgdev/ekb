@@ -1,50 +1,42 @@
-import designIcon from "./assets/icons/design.svg";
-import devIcon from "./assets/icons/dev.svg";
-import mapIcon from "./assets/icons/map.svg";
-import guidesIcon from "./assets/icons/guides.svg";
-import transportIcon from "./assets/icons/transport.svg";
-
-export const CSS_PANEL_BG_KEY = '--projects-panel-bg-color';
-
-export const CSS_PANEL_COLOR_KEY = '--projects-panel-text-color';
-
-export const CSS_PANEL_HOVER = '--projects-panel-hover';
-
-export const CSS_PANEL_FOOTER_HEIGHT = '--projects-panel-footer-height';
+import designIcon from './assets/icons/design.svg';
+import devIcon from './assets/icons/dev.svg';
+import mapIcon from './assets/icons/map.svg';
+import guidesIcon from './assets/icons/guides.svg';
+import transportIcon from './assets/icons/transport.svg';
 
 export const PROJECT_MAP = {
-  id: "map",
-  fullTitle: "Карта \n Екатеринбурга",
-  shortTitle: "Карта",
-  link: "https://map.ekaterinburg.io/",
+  id: 'map',
+  fullTitle: 'Карта \n Екатеринбурга',
+  shortTitle: 'Карта',
+  link: 'https://map.ekaterinburg.io/',
   logo: mapIcon,
 };
 export const PROJECT_GUIDES = {
-  id: "guides",
-  fullTitle: "Руководства \n Екатеринбурга",
-  shortTitle: "Руководства",
-  link: "https://guides.ekaterinburg.io/",
+  id: 'guides',
+  fullTitle: 'Руководства \n Екатеринбурга',
+  shortTitle: 'Руководства',
+  link: 'https://guides.ekaterinburg.io/',
   logo: guidesIcon,
 };
 export const PROJECT_TRANSPORT = {
-  id: "transport",
-  fullTitle: "Транспорт \n Екатеринбурга",
-  shortTitle: "Транспорт",
-  link: "https://transport.ekaterinburg.io/",
+  id: 'transport',
+  fullTitle: 'Транспорт \n Екатеринбурга',
+  shortTitle: 'Транспорт',
+  link: 'https://transport.ekaterinburg.io/',
   logo: transportIcon,
 };
 export const PROJECT_DESIGN = {
-  id: "design",
-  fullTitle: "Дизайн-код \n Екатеринбурга",
-  shortTitle: "Дизайн-код",
-  link: "https://ekaterinburg.design/",
+  id: 'design',
+  fullTitle: 'Дизайн-код \n Екатеринбурга',
+  shortTitle: 'Дизайн-код',
+  link: 'https://ekaterinburg.design/',
   logo: designIcon,
 };
 export const PROJECT_DEV = {
-  id: "dev",
-  fullTitle: "ekaterinburg.dev",
-  shortTitle: "ekaterinburg.dev",
-  link: "https://ekaterinburg.dev/",
+  id: 'dev',
+  fullTitle: 'ekaterinburg.dev',
+  shortTitle: 'ekaterinburg.dev',
+  link: 'https://ekaterinburg.dev/',
   logo: devIcon,
 };
 

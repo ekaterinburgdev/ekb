@@ -1,5 +1,6 @@
 export interface Theme {
   background: string;
+  toggleBackground?: string;
   color: string;
 }
 

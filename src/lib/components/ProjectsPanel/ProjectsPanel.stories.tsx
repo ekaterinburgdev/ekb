@@ -1,27 +1,25 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn } from '@storybook/react';
 
-import { ProjectsPanel, PROJECT_GUIDES, PROJECT_TRANSPORT } from ".";
+import { ProjectsPanel, PROJECT_GUIDES, PROJECT_TRANSPORT } from '.';
 
 export default {
-  title: "Organisms/ProjectsPanel",
+  title: 'Organisms/ProjectsPanel',
   component: ProjectsPanel,
-} as ComponentMeta<typeof ProjectsPanel>;
+};
 
-const Template: ComponentStory<typeof ProjectsPanel> = (args) => (
+const Template: StoryFn<typeof ProjectsPanel> = (args) => (
   <ProjectsPanel {...args} />
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  isDarkIcons: true,
-};
+Default.args = {};
 
 export const Transport = Template.bind({});
 Transport.args = {
   activeProjectId: PROJECT_TRANSPORT.id,
   theme: {
-    background: "#fff",
-    color: "#000",
+    background: '#fff',
+    color: '#000',
   },
 };
 
@@ -29,7 +27,11 @@ export const Guides = Template.bind({});
 Guides.args = {
   activeProjectId: PROJECT_GUIDES.id,
   theme: {
-    background: "#E3F0DB",
-    color: "#000",
+    toggleBackground: '#E3F0DB',
+    background: '#FFF',
+    color: '#000',
+  },
+  toggleStyle: {
+    width: '300px',
   },
 };
