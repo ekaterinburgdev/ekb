@@ -48,10 +48,11 @@
 }
 
 .modal__divider {
-  height: 1px;
+  height: 8px;
   background-color: rgba(155, 170, 190, 0.3);
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 32px;
+  margin-right: 32px;
+  border-radius: 100px;
 }
 
 .modal__subcontent {
@@ -63,7 +64,8 @@
 
 .modal__subcontent a {
   margin: 0 16px;
-  font-size: 32px;
+  font-size: 20px;
+  line-height: 1;
   text-decoration: none;
   position: relative;
   outline: none;
@@ -84,7 +86,7 @@
   &:not(:hover):before {
     opacity: 0.3;
   }
-  
+
   &:not(:hover):focus-visible:before {
     opacity: 1;
   }
@@ -113,6 +115,6 @@
     text-align: center;
   }
   .modal__subcontent a {
-    font-size: 24px;
+    padding: 12px 16px;
   }
 }
