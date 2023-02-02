@@ -9,15 +9,15 @@
   transition: 0.2s all ease;
   outline: none;
   --projects-panel-hover: 155, 170, 190;
-}
 
-.project:hover {
-  background-color: rgba(var(--projects-panel-hover), 0.2);
-}
-
-.project:focus,
-.project:active {
-  background-color: rgba(var(--projects-panel-hover), 0.1);
+  &:hover {
+    background-color: rgba(var(--projects-panel-hover), 0.2);
+  }
+  
+  &:focus,
+  &:active {
+    background-color: rgba(var(--projects-panel-hover), 0.1);
+  }
 }
 
 .project__logo {
