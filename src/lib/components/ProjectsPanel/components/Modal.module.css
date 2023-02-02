@@ -48,10 +48,11 @@
 }
 
 .modal__divider {
-  height: 1px;
+  height: 8px;
   background-color: rgba(155, 170, 190, 0.3);
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 32px;
+  margin-right: 32px;
+  border-radius: 100px;
 }
 
 .modal__subcontent {
@@ -63,22 +64,12 @@
 
 .modal__subcontent a {
   margin: 0 16px;
-  font-size: 32px;
+  font-size: 20px;
+  line-height: 1;
   text-decoration: none;
   position: relative;
   outline: none;
   color: var(--projects-panel-text-color);
-}
-.modal__subcontent a:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: calc(50% + 12px);
-  right: 0;
-  background-color: currentColor;
-  height: 2px;
-  z-index: 2;
-  opacity: 0.8;
 }
 
 .modal__subcontent a:not(:hover):before {
@@ -112,6 +103,6 @@
     text-align: center;
   }
   .modal__subcontent a {
-    font-size: 24px;
+    padding: 12px 16px;
   }
 }

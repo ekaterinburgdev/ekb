@@ -31,7 +31,6 @@
   transition: 0.3s all ease;
   background-repeat: no-repeat;
   background-position: center center;
-  overflow: hidden;
 }
 
 .toggle__activeproject {
