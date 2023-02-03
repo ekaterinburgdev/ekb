@@ -8,14 +8,17 @@ import { Modal, useModal } from './Modal';
 import { AnimatedLogo } from '../../AnimatedLogo';
 
 const defaultTheme = {
-  background: 'black',
-  toggleBackground: 'black',
-  color: 'white',
+  [Theme.DARK]: {
+    background: 'black',
+    color: 'white',
+  },
+  [Theme.LIGHT]: {
+    background: 'white',
+    color: 'black',
+  },
 };
 
 const defaultStyle = {
-  bottom: '16px',
-  left: '16px',
   zIndex: 1000,
 };
 
@@ -28,11 +31,11 @@ export interface Props {
 }
 
 export function ProjectsPanel({
-  theme = defaultTheme,
+  theme = Theme.DARK,
   projects = ALL_PROJECTS,
   activeProjectId = PROJECT_MAP.id,
   style,
-  toggleStyle,
+  toggleStyle: { backgroundColor: toggleBgColor, ...toggleStyle } = {},
 }: Props) {
   const activeProject = projects.find(
     (project) => project.id === activeProjectId
@@ -40,14 +43,16 @@ export function ProjectsPanel({
 
   const { toggle, close, isOpen } = useModal();
 
+  const currentTheme = defaultTheme[theme];
   const cssVars = {
     '--projects-panel-toggle-bg-color':
-      theme.toggleBackground || theme.background,
-    '--projects-panel-bg-color': theme.background,
-    '--projects-panel-text-color': theme.color,
+      toggleBgColor || currentTheme.background,
+    '--projects-panel-bg-color': currentTheme.background,
+    '--projects-panel-text-color': currentTheme.color,
+    '--projects-panel-transition': '0.2s',
     '--projects-panel-hover': '155, 170, 190',
     '--projects-panel-footer-height': '80px',
-    '--projects-focus-color': 'rgba(255, 212, 0, 1)',
+    '--projects-focus-color': '#FFD400',
   } as React.CSSProperties;
 
   if (!activeProject) {
@@ -76,20 +81,26 @@ export function ProjectsPanel({
             })}
             onClick={toggle}
           >
-            <AnimatedLogo color={theme.color} active={isOpen} radius="60px" />
+            <AnimatedLogo
+              color={isOpen ? currentTheme.background : currentTheme.color}
+              active={isOpen}
+              radius="60px"
+              withLogoHover
+            />
           </button>
           <a
             href={activeProject.link}
             className={classNames(
               styles.toggle__activeproject,
-              styles.activeproject
+              styles.activeproject,
+              { [styles.activeproject_inverted_hover]: theme === Theme.LIGHT }
             )}
             style={toggleStyle}
           >
             <img
               src={activeProject.logo}
               className={styles.activeproject__logo}
-              alt={activeProject.fullTitle}
+              aria-hidden="true"
             />
             <div className={styles.activeproject__title}>
               {activeProject.fullTitle}

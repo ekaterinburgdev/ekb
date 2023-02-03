@@ -34,7 +34,7 @@ export const PROJECT_DESIGN = {
 };
 export const PROJECT_DEV = {
   id: 'dev',
-  fullTitle: 'ekaterinburg.dev',
+  fullTitle: 'Код \n Екатеринбурга',
   shortTitle: 'ekaterinburg.dev',
   link: 'https://ekaterinburg.dev/',
   logo: devIcon,

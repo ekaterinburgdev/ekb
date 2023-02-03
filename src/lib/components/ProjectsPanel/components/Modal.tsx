@@ -1,17 +1,17 @@
-import { useCallback, useState } from "react";
-import { useHotkeys } from 'react-hotkeys-hook'
-import classNames from "classnames";
-import FocusLock from "react-focus-lock";
-import styles from "./Modal.module.css";
-import { Theme } from "../types";
+import { useCallback, useState } from 'react';
+import { useHotkeys } from 'react-hotkeys-hook';
+import classNames from 'classnames';
+import FocusLock from 'react-focus-lock';
+import styles from './Modal.module.css';
+import { Theme } from '../types';
 
 export function useModal() {
   const [isOpen, setisOpen] = useState(false);
   const close = useCallback(() => setisOpen(false), []);
   const toggle = useCallback(() => setisOpen(!isOpen), [setisOpen, isOpen]);
 
-  useHotkeys('esc', close)
-  
+  useHotkeys('esc', close);
+
   return { isOpen, toggle, close };
 }
 
@@ -44,7 +44,7 @@ export function Modal({
         <div onClick={onClose} className={styles.modal__overlay} />
         <div className={styles.modal__content}>
           <div className={styles.modal__scroller}>{children}</div>
-          <div className={styles.modal__divider} />
+          {/* <div className={styles.modal__divider} /> */}
           {link && <div className={styles.modal__subcontent}>{link}</div>}
         </div>
         <div className={styles.modal__toggle}>{handler}</div>

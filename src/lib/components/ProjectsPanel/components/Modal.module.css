@@ -1,8 +1,20 @@
 .modal {
-  transition: 0.2s all ease;
   font-family: 'Iset Sans', sans-serif;
   position: fixed;
   -webkit-tap-highlight-color: transparent;
+  transition: var(--projects-panel-transition) all ease-in-out;
+  left: 16px;
+  bottom: 16px;
+}
+
+.modal a,
+.modal a:focus,
+.modal input,
+.modal input:focus,
+.modal button,
+.modal button:focus {
+  outline: none;
+  text-decoration: none;
 }
 
 .modal__overlay {
@@ -12,20 +24,19 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: -1;
   opacity: 0;
   visibility: hidden;
-  transition: 0.2s all ease;
+  transition: var(--projects-panel-transition) all ease-in-out;
 }
 
 .modal__content {
   position: absolute;
   bottom: 0;
-  padding: 16px 0 0;
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s all ease;
+  transition: var(--projects-panel-transition) all ease-in-out;
   transform: scale(0);
   transform-origin: 20px calc(100% - 10px);
   border-radius: 38px;
@@ -36,6 +47,9 @@
 .modal__scroller {
   overflow: auto;
   max-height: 70vh;
+  border-radius: 18px;
+  background-color: rgba(var(--projects-panel-hover), 0.2);
+  margin: 20px;
 }
 
 .modal__scroller::-webkit-scrollbar {
@@ -51,7 +65,7 @@
 }
 
 .modal__subcontent {
-  margin-right: 16px;
+  margin-right: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -74,10 +88,23 @@
   z-index: 1;
 }
 
-/* mobile */
 @media screen and (max-width: 600px) {
+  .modal {
+    left: 8px;
+    bottom: 8px;
+  }
+
+  .modal__content {
+    border-radius: 28px;
+  }
+
+  .modal__scroller {
+    border-radius: 16px;
+    margin: 12px 12px 0;
+  }
+
   .modal__subcontent {
-    padding-bottom: 72px;
-    justify-content: center;
+    height: 72px;
+    margin-right: 12px;
   }
 }
