@@ -1,6 +1,10 @@
-export interface Theme {
+export enum Theme {
+  DARK = 'dark',
+  LIGHT = 'light',
+}
+
+export interface ThemeStyles {
   background: string;
-  toggleBackground?: string;
   color: string;
 }
 
@@ -23,5 +27,6 @@ export interface Styles {
 
 export interface ToggleStyles {
   paddingRight?: string;
+  backgroundColor?: string;
   width?: string;
 }

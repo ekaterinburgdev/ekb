@@ -7,6 +7,16 @@
   bottom: 16px;
 }
 
+.modal a,
+.modal a:focus,
+.modal input,
+.modal input:focus,
+.modal button,
+.modal button:focus {
+  outline: none;
+  text-decoration: none;
+}
+
 .modal__overlay {
   content: '';
   position: fixed;
@@ -14,7 +24,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: -1;
   opacity: 0;
   visibility: hidden;
