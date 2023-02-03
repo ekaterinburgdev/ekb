@@ -10,12 +10,12 @@ interface Props {
 export function Project({ project, active }: Props): JSX.Element {
   return (
     <a
-      tabIndex={active ? -1 : undefined}
       href={project.link}
       className={classNames(styles.project, {
         [styles.project_active]: active,
       })}
       key={project.shortTitle}
+      data-active-text="Вы здесь"
     >
       <img
         src={project.logo}

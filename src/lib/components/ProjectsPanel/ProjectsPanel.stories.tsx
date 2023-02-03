@@ -1,13 +1,13 @@
 import { StoryFn } from '@storybook/react';
-
 import { ProjectsPanel, PROJECT_GUIDES, PROJECT_TRANSPORT } from '.';
+import { Props } from './components/ProjectsPanel';
 
 export default {
   title: 'Organisms/ProjectsPanel',
   component: ProjectsPanel,
 };
 
-const Template: StoryFn<typeof ProjectsPanel> = (args) => (
+const Template: StoryFn<typeof ProjectsPanel> = (args: Props) => (
   <ProjectsPanel {...args} />
 );
 
