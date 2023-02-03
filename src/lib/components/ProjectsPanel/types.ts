@@ -1,5 +1,6 @@
 export interface Theme {
   background: string;
+  toggleBackground?: string;
   color: string;
 }
 
@@ -8,8 +9,7 @@ export interface Project {
   fullTitle: string;
   shortTitle: string;
   link: string;
-  logoDark: string;
-  logoLight: string;
+  logo: string;
   active?: boolean;
 }
 
