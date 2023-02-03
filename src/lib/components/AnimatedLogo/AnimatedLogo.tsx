@@ -15,7 +15,7 @@ interface Props {
 export function AnimatedLogo({
   time = '10s',
   radius = '50vmin',
-  displacement = '2%',
+  displacement = '2.5%',
   shadow = '10vh',
   shadowed = false,
   active = false,

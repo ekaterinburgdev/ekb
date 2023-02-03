@@ -8,11 +8,13 @@
   user-select: none;
   background-color: var(--projects-panel-toggle-bg-color);
   color: var(--projects-panel-text-color);
+	transition: all .15s ease-in-out;
   -webkit-tap-highlight-color: transparent;
   &.toggle_active,
   &.toggle_active .activeproject:not(:hover) {
     background-color: var(--projects-panel-bg-color);
     color: var(--projects-panel-text-color);
+		padding-right: 20vmin;
   }
 }
 
@@ -39,6 +41,14 @@
   margin-left: 12px;
 }
 
+.toggle_active {
+	.toggle__activeproject {
+		transform-origin: left;
+		transform: scale(0) translateX(-25vmin);
+		opacity: 0;
+	}
+}
+
 /* activeproject */
 .activeproject {
   display: flex;
@@ -59,7 +69,7 @@
       background-color: var(--projects-panel-text-color);
     }
   }
-  
+
   &:not(:hover):focus-visible {
     background-color: rgba(var(--projects-panel-hover), 0.2);
 
@@ -103,18 +113,17 @@
   &:hover {
     background-color: rgba(var(--projects-panel-hover), 0.2);
   }
-  
+
   &:active {
     background-color: rgba(var(--projects-panel-hover), 0.1);
   }
-  
+
   &:focus-visible {
     box-shadow: inset 0 0 0 4px var(--projects-focus-color);
   }
-  
+
 }
 
 .allprojects__text {
   margin-left: 12px;
 }
-
