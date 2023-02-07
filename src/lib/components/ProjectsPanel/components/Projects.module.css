@@ -1,24 +1,24 @@
 .projects__list {
   list-style-type: none;
   padding: 0;
-  margin: 8px 20px 16px;
+  margin: 0;
   display: grid;
-  min-width: 320px;
-  grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr) minmax(
-      260px,
+  min-width: 250px;
+  grid-template-columns: minmax(230px, 1fr) minmax(230px, 1fr) minmax(
+      230px,
       1fr
     );
-  row-gap: 0;
+  row-gap: 0px;
 }
 
 @media screen and (max-width: 900px) {
   .projects__list {
-    grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr);
+    grid-template-columns: minmax(230px, 1fr) minmax(230px, 1fr);
   }
 }
 
 @media screen and (max-width: 600px) {
   .projects__list {
-    grid-template-columns: minmax(260px, 1fr);
+    grid-template-columns: minmax(200px, 1fr);
   }
 }

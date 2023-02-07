@@ -14,8 +14,6 @@ const defaultTheme = {
 };
 
 const defaultStyle = {
-  bottom: '16px',
-  left: '16px',
   zIndex: 1000,
 };
 
@@ -45,9 +43,10 @@ export function ProjectsPanel({
       theme.toggleBackground || theme.background,
     '--projects-panel-bg-color': theme.background,
     '--projects-panel-text-color': theme.color,
+    '--projects-panel-transition': '0.2s',
     '--projects-panel-hover': '155, 170, 190',
     '--projects-panel-footer-height': '80px',
-    '--projects-focus-color': 'rgba(255, 212, 0, 1)',
+    '--projects-focus-color': '#FFD400',
   } as React.CSSProperties;
 
   if (!activeProject) {
@@ -76,7 +75,11 @@ export function ProjectsPanel({
             })}
             onClick={toggle}
           >
-            <AnimatedLogo color={theme.color} active={isOpen} radius="60px" />
+            <AnimatedLogo
+              color={isOpen ? theme.background : theme.color}
+              active={isOpen}
+              radius="60px"
+            />
           </button>
           <a
             href={activeProject.link}
@@ -89,7 +92,7 @@ export function ProjectsPanel({
             <img
               src={activeProject.logo}
               className={styles.activeproject__logo}
-              alt={activeProject.fullTitle}
+              aria-hidden="true"
             />
             <div className={styles.activeproject__title}>
               {activeProject.fullTitle}

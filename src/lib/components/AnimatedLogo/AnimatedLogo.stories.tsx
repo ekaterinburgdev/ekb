@@ -1,12 +1,12 @@
 import { StoryFn } from '@storybook/react';
-import { AnimatedLogo } from './AnimatedLogo';
+import { AnimatedLogo, Props } from './AnimatedLogo';
 
 export default {
   title: 'Organisms/AnimatedLogo',
   component: AnimatedLogo,
 };
 
-const Template: StoryFn<typeof AnimatedLogo> = (args) => (
+const Template: StoryFn<typeof AnimatedLogo> = (args: Props) => (
   <AnimatedLogo {...args} />
 );
 

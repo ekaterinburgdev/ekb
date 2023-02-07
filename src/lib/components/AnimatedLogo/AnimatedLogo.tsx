@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './AnimatedLogo.module.css';
 
-interface Props {
+export interface Props {
   radius?: string;
   time?: string;
   displacement?: string;
@@ -15,7 +15,7 @@ interface Props {
 export function AnimatedLogo({
   time = '10s',
   radius = '50vmin',
-  displacement = '2%',
+  displacement = '2.5%',
   shadow = '10vh',
   shadowed = false,
   active = false,
@@ -40,7 +40,7 @@ export function AnimatedLogo({
             '--displacement': displacement,
             '--shadow-size': shadow,
             '--shadow-opacity': 0.35,
-            '--transition-duration': '0.15s',
+            '--transition-duration': '0.2s',
             '--transition-timing-function': 'ease-in-out',
           } as React.CSSProperties
         }
