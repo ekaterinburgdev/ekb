@@ -1,8 +1,3 @@
-/* .logo {
-  transition: transform var(--projects-panel-transition) var(--transition-timing-function);
-  animation: scale var(--spin-time) ease-in-out infinite;
-} */
-
 .logo svg {
   width: 94%;
   height: auto;
@@ -10,39 +5,26 @@
   transition: transform var(--projects-panel-transition) var(--transition-timing-function);
 }
 
-
-
-.circles {
-  height: var(--circle-size);
-  width: var(--circle-size);
-  position: absolute;
-  margin: 0 auto;
-  top: 50%;
-  left: 50%;
-  transform: translate3D(-50%, -50%, 0) scale(1);
-  transition: all var(--projects-panel-transition) var(--transition-timing-function);
-	z-index: 100;
-
+.circles_with_hover {
   &:hover {
     transform: translate3D(-50%, -50%, 0) scale(1.1);
   }
 
-  &.circles_with_hover:hover {
-
-    .logo svg {
-      transform: scale(0.85);
+  &.circles_shadowed{
+    &:hover {
+      .circle.third {
+        box-shadow: 0 0 var(--shadow-size) 0 rgba(0, 180, 0, 0.8), 0 0 var(--shadow-size) 0 rgba(0, 255, 0, 0.6) inset;
+      }
     }
 
-    .circle.first {
-      border-width: var(--circle-stroke-hover);
-    }
-
-    .circle.second {
-      border-width: var(--circle-stroke-hover);
-    }
-
-    .circle.third {
-      border-width: var(--circle-stroke-hover);
+    &:active {
+      .circle.first {
+        box-shadow: 0 0 10vmin 0 rgba(255, 255, 255, 0.5) inset;
+      }
+  
+      .circle.third {
+        box-shadow: 0 0 var(--shadow-size) 0 #00b400, 0 0 var(--shadow-size) 0 rgba(0, 255, 0, 0.6) inset;
+      }
     }
   }
 
@@ -74,9 +56,21 @@
       border-radius: 1000px
     }
     .logo svg path {
-      transition: all var(--projects-panel-transition) var(--transition-timing-function);
+      transition: all var(--transition-duration) var(--transition-timing-function);
     }
   }
+}
+
+.circles {
+  height: var(--circle-size);
+  width: var(--circle-size);
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate3D(-50%, -50%, 0) scale(1);
+  transition: all var(--transition-duration) var(--transition-timing-function);
+	z-index: 100;
 }
 
 .circles_shadowed {
@@ -91,22 +85,6 @@
 
     &.third {
       box-shadow: 0 0 var(--shadow-size) 0 rgba(0, 180, 0, 0.7), 0 0 var(--shadow-size) 0 rgba(0, 255, 0, 0.5) inset;
-    }
-  }
-
-  &:hover {
-    .circle.third {
-      box-shadow: 0 0 var(--shadow-size) 0 rgba(0, 180, 0, 0.8), 0 0 var(--shadow-size) 0 rgba(0, 255, 0, 0.6) inset;
-    }
-  }
-
-  &:active {
-    .circle.first {
-      box-shadow: 0 0 10vmin 0 rgba(255, 255, 255, 0.5) inset;
-    }
-
-    .circle.third {
-      box-shadow: 0 0 var(--shadow-size) 0 #00b400, 0 0 var(--shadow-size) 0 rgba(0, 255, 0, 0.6) inset;
     }
   }
 }

@@ -2,7 +2,6 @@
   display: inline-flex;
   padding: 8px;
   border-radius: 64px;
-  outline: none;
   user-select: none;
   background-color: var(--projects-panel-toggle-bg-color);
   color: var(--projects-panel-text-color);
@@ -69,18 +68,15 @@
   color: var(--projects-panel-text-color);
   transition: var(--projects-panel-transition) all ease-in-out;
 
-  &:hover {
+  &.activeproject_inverted_hover:hover,
+  &.activeproject_inverted_hover:focus {
     background-color: var(--projects-panel-text-color);
     color: var(--projects-panel-bg-color);
-
-    .activeproject__logo {
-      background-color: var(--projects-panel-text-color);
-    }
   }
-
-  &:not(:hover):focus-visible {
+  
+  &:not(.activeproject_inverted_hover):hover,
+  &:not(.activeproject_inverted_hover):focus {
     background-color: rgba(var(--projects-panel-hover), 0.2);
-
     .activeproject__logo {
       background-color: transparent;
     }
@@ -113,16 +109,17 @@
   position: relative;
   font-size: 20px;
   line-height: 21px;
-  outline: none;
+  outline: none !important;
+  text-decoration: none !important;
   display: flex;
   align-items: center;
 
   &:hover {
-    background-color: rgba(var(--projects-panel-hover), 0.2);
+    background-color: var(--projects-panel-hover);
   }
 
   &:active {
-    background-color: rgba(var(--projects-panel-hover), 0.1);
+    background-color: var(--projects-panel-hover);
   }
 
   &:focus {

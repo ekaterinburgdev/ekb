@@ -34,16 +34,14 @@ export const PROJECT_DESIGN = {
 };
 export const PROJECT_DEV = {
   id: 'dev',
-  fullTitle: 'ekaterinburg.dev',
+  fullTitle: 'Код \n Екатеринбурга',
   shortTitle: 'ekaterinburg.dev',
   link: 'https://ekaterinburg.dev/',
   logo: devIcon,
 };
 
-export const ALL_PROJECTS = [
-  PROJECT_MAP,
-  PROJECT_GUIDES,
-  PROJECT_TRANSPORT,
-  PROJECT_DESIGN,
-  PROJECT_DEV,
-];
+export const ALPHA_PROJECTS = [PROJECT_MAP, PROJECT_GUIDES, PROJECT_TRANSPORT];
+
+export const PRODUCTION_PROJECTS = [PROJECT_DESIGN, PROJECT_DEV];
+
+export const ALL_PROJECTS = [...ALPHA_PROJECTS, ...PRODUCTION_PROJECTS];

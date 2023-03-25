@@ -1,6 +1,6 @@
 import styles from './Toggle.module.css';
 import classNames from 'classnames';
-import { ALL_PROJECTS, PROJECT_MAP } from '../constants';
+import { PRODUCTION_PROJECTS, PROJECT_DEV } from '../constants';
 import { Styles, Project, Theme, ToggleStyles } from '../types';
 import { Projects } from './Projects';
 import { ReactComponent as Dots } from '../assets/icons/dots.svg';
@@ -8,9 +8,14 @@ import { Modal, useModal } from './Modal';
 import { AnimatedLogo } from '../../AnimatedLogo';
 
 const defaultTheme = {
-  background: 'black',
-  toggleBackground: 'black',
-  color: 'white',
+  [Theme.DARK]: {
+    background: 'black',
+    color: 'white',
+  },
+  [Theme.LIGHT]: {
+    background: 'white',
+    color: 'black',
+  },
 };
 
 const defaultStyle = {
@@ -26,11 +31,11 @@ export interface Props {
 }
 
 export function ProjectsPanel({
-  theme = defaultTheme,
-  projects = ALL_PROJECTS,
-  activeProjectId = PROJECT_MAP.id,
+  theme = Theme.DARK,
+  projects = PRODUCTION_PROJECTS,
+  activeProjectId = PROJECT_DEV.id,
   style,
-  toggleStyle,
+  toggleStyle: { backgroundColor: toggleBgColor, ...toggleStyle } = {},
 }: Props) {
   const activeProject = projects.find(
     (project) => project.id === activeProjectId
@@ -38,11 +43,12 @@ export function ProjectsPanel({
 
   const { toggle, close, isOpen } = useModal();
 
+  const currentTheme = defaultTheme[theme];
   const cssVars = {
     '--projects-panel-toggle-bg-color':
-      theme.toggleBackground || theme.background,
-    '--projects-panel-bg-color': theme.background,
-    '--projects-panel-text-color': theme.color,
+      toggleBgColor || currentTheme.background,
+    '--projects-panel-bg-color': currentTheme.background,
+    '--projects-panel-text-color': currentTheme.color,
     '--projects-panel-transition': '0.2s',
     '--projects-panel-hover': '155, 170, 190',
     '--projects-panel-footer-height': '80px',
@@ -76,16 +82,18 @@ export function ProjectsPanel({
             onClick={toggle}
           >
             <AnimatedLogo
-              color={isOpen ? theme.background : theme.color}
+              color={isOpen ? currentTheme.background : currentTheme.color}
               active={isOpen}
               radius="60px"
+              withLogoHover
             />
           </button>
           <a
             href={activeProject.link}
             className={classNames(
               styles.toggle__activeproject,
-              styles.activeproject
+              styles.activeproject,
+              { [styles.activeproject_inverted_hover]: theme === Theme.LIGHT }
             )}
             style={toggleStyle}
           >
