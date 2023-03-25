@@ -1,6 +1,6 @@
 import styles from './Toggle.module.css';
 import classNames from 'classnames';
-import { ALL_PROJECTS, PROJECT_MAP } from '../constants';
+import { PRODUCTION_PROJECTS, PROJECT_DEV } from '../constants';
 import { Styles, Project, Theme, ToggleStyles } from '../types';
 import { Projects } from './Projects';
 import { ReactComponent as Dots } from '../assets/icons/dots.svg';
@@ -32,8 +32,8 @@ export interface Props {
 
 export function ProjectsPanel({
   theme = Theme.DARK,
-  projects = ALL_PROJECTS,
-  activeProjectId = PROJECT_MAP.id,
+  projects = PRODUCTION_PROJECTS,
+  activeProjectId = PROJECT_DEV.id,
   style,
   toggleStyle: { backgroundColor: toggleBgColor, ...toggleStyle } = {},
 }: Props) {

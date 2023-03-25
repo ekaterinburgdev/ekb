@@ -1,5 +1,6 @@
 import { StoryFn } from '@storybook/react';
 import {
+  ALL_PROJECTS,
   ProjectsPanel,
   PROJECT_DEV,
   PROJECT_GUIDES,
@@ -24,6 +25,7 @@ Dev.args = {
 
 export const Transport = Template.bind({});
 Transport.args = {
+  projects: ALL_PROJECTS,
   activeProjectId: PROJECT_TRANSPORT.id,
   theme: Theme.LIGHT,
 };
@@ -32,6 +34,7 @@ export const Guides = Template.bind({});
 Guides.args = {
   activeProjectId: PROJECT_GUIDES.id,
   theme: Theme.LIGHT,
+  projects: ALL_PROJECTS,
   toggleStyle: {
     width: '300px',
     backgroundColor: '#E3F0DB',
