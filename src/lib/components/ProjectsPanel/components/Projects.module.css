@@ -4,17 +4,8 @@
   margin: 0;
   display: grid;
   min-width: 250px;
-  grid-template-columns: minmax(230px, 1fr) minmax(230px, 1fr) minmax(
-      230px,
-      1fr
-    );
+  grid-template-columns: minmax(230px, 1fr) minmax(230px, 1fr);
   row-gap: 0px;
-}
-
-@media screen and (max-width: 900px) {
-  .projects__list {
-    grid-template-columns: minmax(230px, 1fr) minmax(230px, 1fr);
-  }
 }
 
 @media screen and (max-width: 600px) {
