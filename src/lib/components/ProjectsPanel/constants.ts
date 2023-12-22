@@ -8,21 +8,21 @@ export const PROJECT_MAP = {
   id: 'map',
   fullTitle: 'Карта \n Екатеринбурга',
   shortTitle: 'Карта',
-  link: 'https://map.ekaterinburg.io/',
+  link: 'https://map.ekaterinburg.city/',
   logo: mapIcon,
 };
 export const PROJECT_GUIDES = {
   id: 'guides',
   fullTitle: 'Руководства \n Екатеринбурга',
   shortTitle: 'Руководства',
-  link: 'https://guides.ekaterinburg.io/',
+  link: 'https://guides.ekaterinburg.city/',
   logo: guidesIcon,
 };
 export const PROJECT_TRANSPORT = {
   id: 'transport',
   fullTitle: 'Транспорт \n Екатеринбурга',
   shortTitle: 'Транспорт',
-  link: 'https://transport.ekaterinburg.io/',
+  link: 'https://transport.ekaterinburg.city/',
   logo: transportIcon,
 };
 export const PROJECT_DESIGN = {
@@ -42,6 +42,6 @@ export const PROJECT_DEV = {
 
 export const ALPHA_PROJECTS = [PROJECT_GUIDES, PROJECT_TRANSPORT];
 
-export const PRODUCTION_PROJECTS = [PROJECT_DESIGN, PROJECT_DEV, PROJECT_MAP];
+export const PRODUCTION_PROJECTS = [PROJECT_DESIGN, PROJECT_DEV, PROJECT_MAP, PROJECT_GUIDES];
 
 export const ALL_PROJECTS = [...ALPHA_PROJECTS, ...PRODUCTION_PROJECTS];
