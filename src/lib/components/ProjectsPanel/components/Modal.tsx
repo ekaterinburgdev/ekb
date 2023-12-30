@@ -3,7 +3,6 @@ import { useHotkeys } from 'react-hotkeys-hook';
 import classNames from 'classnames';
 import FocusLock from 'react-focus-lock';
 import styles from './Modal.module.css';
-import { Theme } from '../types';
 
 export function useModal() {
   const [isOpen, setisOpen] = useState(false);

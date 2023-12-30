@@ -1,5 +1,5 @@
-export * from "./constants";
+export * from './constants';
 
-export * from "./types";
+export * from './types';
 
-export { ProjectsPanel } from "./components/ProjectsPanel";
+export { ProjectsPanel } from './components/ProjectsPanel';

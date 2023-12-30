@@ -2,7 +2,7 @@ import { StoryFn } from '@storybook/react';
 import { AnimatedLogo, Props } from './AnimatedLogo';
 
 export default {
-  title: 'Organisms/AnimatedLogo',
+  title: 'Ekb/AnimatedLogo',
   component: AnimatedLogo,
 };
 

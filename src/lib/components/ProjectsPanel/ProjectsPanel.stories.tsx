@@ -10,7 +10,7 @@ import {
 import { Props } from './components/ProjectsPanel';
 
 export default {
-  title: 'Organisms/ProjectsPanel',
+  title: 'Ekb/ProjectsPanel',
   component: ProjectsPanel,
 };
 

@@ -38,7 +38,7 @@ export function ProjectsPanel({
   toggleStyle: { backgroundColor: toggleBgColor, ...toggleStyle } = {},
 }: Props) {
   const activeProject = projects.find(
-    (project) => project.id === activeProjectId
+    (project) => project.id === activeProjectId,
   );
 
   const { toggle, close, isOpen } = useModal();
@@ -93,13 +93,14 @@ export function ProjectsPanel({
             className={classNames(
               styles.toggle__activeproject,
               styles.activeproject,
-              { [styles.activeproject_inverted_hover]: theme === Theme.LIGHT }
+              { [styles.activeproject_inverted_hover]: theme === Theme.LIGHT },
             )}
             style={toggleStyle}
           >
             <img
               src={activeProject.logo}
               className={styles.activeproject__logo}
+              alt="logo"
               aria-hidden="true"
             />
             <div className={styles.activeproject__title}>

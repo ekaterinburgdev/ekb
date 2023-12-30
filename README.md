@@ -8,20 +8,28 @@ React components for ekaterinburgdev projects
 
 <img src="https://github.com/ekaterinburgdev/ekaterinburg-ui/assets/22644149/0368caab-711d-456a-b707-6e46eafa8bcc" width="388" />
 
-
-
-## Development
-
-1. Install [Node.js](https://nodejs.org/en/download/) and [pnpm](https://www.npmjs.com/package/pnpm#user-content-usage)
-
-2. Install dependencies
+## Installation
 
 ```
-pnpm i
+pnpm i ekb
+
+Add ekb/fonts.css
 ```
 
-3. Run local server
+## Local server
 
 ```
 pnpm start
+```
+
+## Local linking development
+
+If you want to test this library without tag publishing you can link the package:
+
+```
+pnpm build
+
+pnpm link --global
+cd OTHER_PROJECT_WITH_THIS_PACKAGE
+pnpm link --global ekb
 ```

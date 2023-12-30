@@ -10,7 +10,19 @@ export default defineConfig({
       insertTypesEntry: true,
     }),
     svgr(),
-    react(),
+    react({
+      babel: {
+        plugins: [
+          [
+            'babel-plugin-styled-components',
+            {
+              displayName: true,
+              fileName: false,
+            },
+          ],
+        ],
+      },
+    }),
   ],
   build: {
     sourcemap: true,
